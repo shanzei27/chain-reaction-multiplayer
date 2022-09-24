@@ -34,6 +34,8 @@
   "author": "distantcam",
   "license": "MIT",
   "dependencies": {
+    "bindings": "^1.5.0",
+    "deasync": "^0.1.28",
     "phaser": "^3.54.0"
   },
   "devDependencies": {
