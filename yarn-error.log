@@ -1,20 +1,25 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\shanj\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add sass -D
+  C:\Program Files\nodejs\node.exe C:\Users\shand\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js parcel index.html
 
 PATH: 
-  C:\Users\shanj\AppData\Local\Temp\yarn--1664028378723-0.44041956606642674;F:\pdv\phaser-electron-typescript-parcel\node_modules\.bin;C:\Users\shanj\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Users\shanj\AppData\Local\Yarn\bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files (x86)\Microsoft\Edge\Application;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\Git LFS;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Users\shanj\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\shanj\GitHubDesktop\bin;C:\Users\shanj\AppData\Local\GitHubDesktop\bin;C:\Users\shanj\.dotnet\tools;C:\Users\shanj\AppData\Roaming\npm;C:\Users\shanj\AppData\Local\Programs\Microsoft VS Code\bin
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\shand\AppData\Local\Microsoft\WindowsApps;C:\Users\shand\AppData\Local\GitHubDesktop\bin;;C:\Users\shand\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\shand\AppData\Roaming\npm
 
 Yarn version: 
   1.22.19
 
 Node version: 
-  16.13.1
+  16.17.1
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'F:\pdv\phaser-electron-typescript-parcel\node_modules\deasync\bin\win32-x64-node-16\deasync.node'
+  SyntaxError: C:\FLZ\phaser-electron-typescript-parcel\package.json: Unexpected token / in JSON at position 507
+      at JSON.parse (<anonymous>)
+      at C:\Users\shand\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\shand\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\shand\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -23,16 +28,18 @@ npm manifest:
     "description": "phaser electron typescript parcel template",
     "main": "build/main.js",
     "scripts": {
+      "build": "parcel index.html",
       "postinstall": "electron-builder install-app-deps",
       "superclean": "rimraf .cache node_modules build dist",
       "clean": "rimraf build dist",
       "download-phaser-typedef": "download --out typings https://raw.githubusercontent.com/photonstorm/phaser3-docs/master/typescript/phaser.d.ts",
-      "build": "rimraf build && parcel build src/main.ts src/index.html --public-url ./ -d build --out-file=main --target=electron",
+    //  "build": "rimraf build && parcel build src/main.ts src/index.html --public-url ./ -d build --out-file=main --target=electron",
       "watch": "rimraf build && parcel watch src/main.ts src/index.html --public-url ./ -d build --out-file=main --target=electron",
       "app": "cross-env ELECTRON_DEBUG=true electron build/main.js",
       "debug": "cross-env ELECTRON_DEBUG=vscode electron --remote-debugging-port=9223 build/main.js",
       "dist": "yarn build && electron-builder"
     },
+    "type": "module",
     "homepage": "https://github.com/distantcam/phaser-electron-typescript-parcel",
     "bugs": {
       "url": "https://github.com/distantcam/phaser-electron-typescript-parcel/issues"
@@ -70,7 +77,8 @@ npm manifest:
       "rimraf": "^3.0.2",
       "tslint": "^6.1.3",
       "typescript": "^4.2.4"
-    }
+    },
+    "repository": "https://github.com/shanzei27/phaser-electron-typescript-parcel.git"
   }
 
 yarn manifest: 
