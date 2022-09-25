@@ -37,7 +37,7 @@
   "dependencies": {
     "bindings": "^1.5.0",
     "deasync": "^0.1.28",
-    "phaser": "^3.54.0"
+    "phaser": "^3.55.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
